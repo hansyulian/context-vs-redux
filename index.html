@@ -13,5 +13,11 @@
       crossOrigin="anonymous"
       src="//unpkg.com/react-scan/dist/auto.global.js"
     ></script>
+    <script>
+      // This tells React Scan to run even though it's a production build
+      window.reactScanConfig = {
+        dangerouslyForceRunInProduction: true,
+      };
+    </script>
   </body>
 </html>

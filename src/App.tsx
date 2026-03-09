@@ -1,7 +1,7 @@
 
 import { createTheme, MantineProvider, Paper } from '@mantine/core'
 import '@mantine/core/styles.css';
-import { BrowserRouter, Route, Routes } from 'react-router';
+import { HashRouter, Route, Routes } from 'react-router';
 import { ReactVsReduxPage } from './pages/ReactVsReduxPage/ReactVsReduxPage';
 import { PropsDrillingPage } from './pages/PropsDrillingPage/PropsDrillingPage';
 
@@ -21,12 +21,12 @@ function App() {
 
   return (
     <MantineProvider theme={theme}>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path='/' element={<ReactVsReduxPage />}></Route>
           <Route path='/props-drilling' element={<PropsDrillingPage />}></Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </MantineProvider>
   )
 }
