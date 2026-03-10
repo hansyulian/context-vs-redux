@@ -10,9 +10,7 @@ export function ReduxComponent() {
       <Text>Redux will only render the child that listen to that specific selector when it's updated</Text>
       <Text>Under here, there are 2 separate component that uses different value from same redux slice, but updating the state of one of them will only the listener to the selector</Text>
       <Text>You can try by clicking the button below and look at how the react scan detect the re-rendering</Text>
-      <InternalComponent1 />
-      <InternalComponent2 />
-      <SumOf1And2 />
+      <InternalContainer />
       <Divider />
       <Title order={4}>When to use Redux</Title>
       <List>
@@ -20,6 +18,17 @@ export function ReduxComponent() {
         <List.Item>You want to have a value that get updated often and not efficient for context to handle it</List.Item>
         <List.Item><Highlight highlight={'Props Drilling'}>You want to prevent Props Drilling that is considered globally shared value</Highlight></List.Item>
       </List>
+    </Stack>
+  </Paper>
+}
+
+function InternalContainer() {
+  return <Paper p='md'>
+    <Stack>
+      <Title>This is just the container component for the components below</Title>
+      <InternalComponent1 />
+      <InternalComponent2 />
+      <SumOf1And2 />
     </Stack>
   </Paper>
 }
